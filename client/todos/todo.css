@@ -1,0 +1,29 @@
+body {
+  background: rgb(232, 231, 251);
+}
+body label {
+  margin-right: 0.5em;
+}
+body label button {
+  margin-inline: 0.5em;
+}
+body #todoForm input, body #todoForm textarea {
+  width: 15em;
+}
+body .checkboxDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 1em;
+}
+body .checkboxDiv button {
+  width: 4em;
+}
+body .checkboxDiv .deleteBtn {
+  margin-bottom: 2em;
+}
+body .checkboxDiv .editBtn {
+  margin-top: 1em;
+}
+
+/*# sourceMappingURL=todo.css.map */

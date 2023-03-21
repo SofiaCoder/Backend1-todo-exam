@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do-list</title>
+    <script src="./todo.js" type="module"></script>
+    <link href="./todo.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <h1><span id="name"></span>'s to-do-list</h1>
+    <form id="todoForm">
+        <label for="task">Task: </label>
+        <input type="text" id="task" placeholder="Your task..." />
+        <label for="todoText">Text: </label>
+        <textarea id="todoText" placeholder="Text..."></textarea>
+        <button type="submit" id="addTodo">Add</button>
+        <button type="submit" id="saveTodo">Save</button>
+    </form>
+    <br>
+    <div class="checkboxDiv"></div>
+    <h2 id="h2Res"></h2>
+    <br>
+    <form id="friendForm">
+        <label for="friend">Find friend: </label>
+        <select id="selectFriend">
+            <option>Friends</option>
+        </select>
+        <button type="submit" id="addFriend">Add</button>
+    </form>
+    <h3>My friends</h3>
+    <ul id="friendList"></ul>
+    <div id="friendsTodosDiv">
+    </div>
+</body>
+</html>

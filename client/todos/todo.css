@@ -1,5 +1,16 @@
 body {
   background: rgb(232, 231, 251);
+  display: grid;
+  grid-template-areas: "h1           h1           h3" "todoForm     todoForm     friendForm" "h2            ......      friendList" "checkSection checkSection friendsTodos" "checkSection checkSection friendsTodos";
+}
+body h1 {
+  grid-area: h1;
+}
+body h2 {
+  grid-area: h2;
+}
+body h3 {
+  grid-area: h3;
 }
 body label {
   margin-right: 0.5em;
@@ -7,23 +18,59 @@ body label {
 body label button {
   margin-inline: 0.5em;
 }
+body #todoForm {
+  grid-area: todoForm;
+}
 body #todoForm input, body #todoForm textarea {
   width: 15em;
 }
-body .checkboxDiv {
+body .checkboxSection {
+  grid-area: checkSection;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: flex-start;
   margin-left: 1em;
 }
-body .checkboxDiv button {
-  width: 4em;
+body .checkboxSection .todoBox {
+  position: relative;
+  margin: 2rem;
+  height: 14rem;
+  width: 15em;
+  background: yellow;
+  box-shadow: 10px 5px 5px rgb(145, 144, 144);
 }
-body .checkboxDiv .deleteBtn {
-  margin-bottom: 2em;
+body .checkboxSection .todoBox .todoCheckbox {
+  margin: 1em 0 0 1em;
 }
-body .checkboxDiv .editBtn {
-  margin-top: 1em;
+body .checkboxSection .todoBox .todoLabel {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5em 1em;
+}
+body .checkboxSection .todoBox .todoLabel .todoTask {
+  font-weight: 700;
+  margin-bottom: 1em;
+}
+body .checkboxSection .todoBox button {
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+}
+body .checkboxSection .todoBox .editBtn {
+  margin-right: 2.5em;
+  width: 3em;
+}
+body .checkboxSection .todoBox .deleteBtn {
+  width: 2em;
+}
+body #friendForm {
+  grid-area: friendForm;
+}
+body #friendList {
+  grid-area: friendList;
+}
+body #friendsTodosDiv {
+  grid-area: friendsTodos;
 }
 
 /*# sourceMappingURL=todo.css.map */

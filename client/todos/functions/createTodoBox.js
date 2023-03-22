@@ -28,10 +28,20 @@ const createTodoBox = (data) => {
             checkboxValue(boxVal, id)
         }
 
+        const task = document.createElement('span');
+        task.className = "todoTask";
+        task.textContent= `Task: ${todo.task}`
+
+        const text = document.createElement('span');
+        text.className = "todoText";
+        text.textContent= ` Description: ${todo.text}`
+
         //Create checkbox input
         const label = document.createElement('label');
         label.htmlFor = 'todo' + id;
         label.className = "todoLabel"
+        label.appendChild(task)
+        label.appendChild(text)
 
         //Create edit button with functions
         const editBtn = document.createElement('button');
@@ -42,14 +52,13 @@ const createTodoBox = (data) => {
         //Create delete button with functions
         const deleteBtn = document.createElement('button');
         deleteBtn.className = "deleteBtn";
-        deleteBtn.textContent = "Delete";
+        deleteBtn.textContent = "X";
         deleteBtn.addEventListener('click', () => deleteTodo(id));
         
         //If there's no text dont write out 'null'
         if(todo.text === null) todo.text = '';
 
         //Create checkbox with parameters as label-text
-        label.textContent = `Task: ${todo.task} - Description: ${todo.text}`
         todoBox.appendChild(checkBox)
         todoBox.appendChild(label)
         todoBox.appendChild(editBtn)

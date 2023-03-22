@@ -1,5 +1,22 @@
 body {
     background: rgb(232, 231, 251);
+    display: grid;
+    grid-template-areas: 
+        "h1           h1           h3"
+        "todoForm     todoForm     friendForm"
+        "h2            ......      friendList"
+        "checkSection checkSection friendsTodos"
+        "checkSection checkSection friendsTodos";
+
+    h1 {
+        grid-area: h1;
+    }
+    h2 {
+        grid-area: h2;
+    }
+    h3 {
+        grid-area: h3;
+    }
 
     label {
         margin-right: 0.5em;
@@ -9,24 +26,63 @@ body {
         }
     }
     #todoForm {
+        grid-area: todoForm;
       input, textarea {
         width: 15em;
       }
     }
-    .checkboxDiv {
+    .checkboxSection {
+        grid-area: checkSection;
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
         align-items: flex-start;
         margin-left: 1em;
 
-        button {
-            width: 4em;
+        .todoBox {
+            position: relative;
+            margin: 2rem;
+            height: 14rem;
+            width: 15em;
+            background: yellow;
+            box-shadow: 10px 5px 5px rgb(145, 144, 144);
+
+            .todoCheckbox {
+                margin: 1em 0 0 1em;
+            }
+
+            .todoLabel {
+                display: flex;
+                flex-direction: column;
+                margin: 0.5em 1em;
+
+                .todoTask {
+                    font-weight: 700;
+                    margin-bottom: 1em;
+                }
+            }
+
+            button {
+                position:absolute;
+                bottom: 1em;
+                right: 1em;
+                
+            }
+            .editBtn {
+                margin-right: 2.5em;
+                width: 3em;
+            }
+            .deleteBtn {
+                width: 2em;
+            }
         }
-        .deleteBtn {
-            margin-bottom: 2em;
-        }
-        .editBtn {
-            margin-top: 1em;
-        }
+    }
+    #friendForm {
+        grid-area: friendForm;
+    }
+    #friendList {
+        grid-area: friendList;
+    }
+    #friendsTodosDiv {
+        grid-area: friendsTodos;
     }
 }

@@ -1,12 +1,16 @@
 import deleteTodo from "./deleteTodo.js";
 import checkboxValue from "./checkboxValuePatch.js";
 import showTodoToEdit from "./showTodoToEdit.js";
-const checkboxDiv = document.querySelector('.checkboxDiv');
+const checkboxSection = document.querySelector('.checkboxSection');
 
-const createTodoCheckbox = (data) => {
+const createTodoBox = (data) => {
     data.forEach((todo) => {
         const id = todo.id 
         let boxVal = todo.value;
+
+        //Create Div-box
+        const todoBox = document.createElement('div');
+        todoBox.className = "todoBox";
 
         //Create checkbox input
         const checkBox = document.createElement('input');
@@ -46,11 +50,12 @@ const createTodoCheckbox = (data) => {
 
         //Create checkbox with parameters as label-text
         label.textContent = `Task: ${todo.task} - Description: ${todo.text}`
-        checkboxDiv.appendChild(checkBox)
-        checkboxDiv.appendChild(label)
-        checkboxDiv.appendChild(editBtn)
-        checkboxDiv.appendChild(deleteBtn)
+        todoBox.appendChild(checkBox)
+        todoBox.appendChild(label)
+        todoBox.appendChild(editBtn)
+        todoBox.appendChild(deleteBtn)
+        checkboxSection.appendChild(todoBox)
     })
 }
 
-export {createTodoCheckbox as default};
+export {createTodoBox as default};

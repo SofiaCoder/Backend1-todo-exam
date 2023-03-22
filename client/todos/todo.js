@@ -2,7 +2,7 @@ import addTodo from "./functions/addTodo.js";
 import addFriend from "../friends/functions/addFriend.js";
 import findFriends from "../friends/functions/findFriends.js";
 import showFriends from "../friends/functions/showFriends.js";
-import createTodoCheckbox from "./functions/createTodoCheckbox.js";
+import createTodoBox from "./functions/createTodoBox.js";
 const nameH1 = document.querySelector('#name');
 const headline = document.querySelector('h1');
 const addBtn = document.querySelector('#addTodo');
@@ -25,7 +25,7 @@ const res = await fetch('http://localhost:5050/todo/id',
     nameH1.textContent = data[0].username;
 
     //Create checkboxes with buttons of fetched data
-    createTodoCheckbox(data);
+    createTodoBox(data);
 
     //Finds all users and displays them in a select-menu
     findFriends();

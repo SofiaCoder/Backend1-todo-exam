@@ -19,7 +19,9 @@ exports.postToDo = function postToDo(req, res) {
 
     pool.execute('INSERT INTO todos (task, text, userID) VALUE (?, ?, ?)', [task, text, userID], (error, result) => {
         if (error) {
-            res.status(500).send(error)
+            res.status(500).send(error.sqlMessage)
+        } else if (result.affectedRows < 1){
+            res.status(500).send('Somethong went wrong in the database')
         } else {
             res.status(200).send("Todo added")
         }

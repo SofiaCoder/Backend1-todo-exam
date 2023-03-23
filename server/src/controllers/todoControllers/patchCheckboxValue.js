@@ -22,8 +22,10 @@ exports.patchCheckBox = function patchCheckBox(req, res) {
     }
 
     pool.execute('UPDATE todos SET value = ? WHERE id = ?', [boxValue, todoID], (error, result) => {
-        if (result.affectedRows < 1 || error) {
+        if (error) {
             res.status(500).send(error)
+        } else if (result.affectedRows < 1){
+            res.status(500).send('Somethong went wrong. Value didn´t get updated')
         } else {
             res.status(200).send("Updated value")
         }

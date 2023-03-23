@@ -19,7 +19,9 @@ exports.patchToDo = function patchToDo(req, res) {
 
     pool.execute('UPDATE todos SET task=?, text=? WHERE id = ?', [todoTask, todoText, todoID], (error, result) => {
         if (error) {
-            res.status(500).send(error)
+            res.status(500).send(error.sqlMessage)
+        } else if (result.affectedRows < 1){
+            res.status(500).send('Something went wrong in the database')
         } else {
             res.status(200).send(result)
         }

@@ -17,14 +17,15 @@ exports.login = function login (req, res) {
     if (error) {
         res.status(400).send(error.details[0].message);
         return;
-    }
+    } 
 
     const { username, password } = value;
 
     pool.execute('SELECT password, id FROM users WHERE username=?',[username], (error, result) => {
         if (error) {
             res.status(500).send(error.sqlMessage)
-            return;
+        } else if (result.length === 0) {
+            res.status(500).send('Wrong username')
         } else {
             const savedPassword = result[0].password;
             

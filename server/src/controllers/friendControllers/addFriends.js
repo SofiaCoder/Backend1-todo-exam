@@ -22,8 +22,10 @@ exports.addFriends = function addFriends(req, res) {
 
     const mySQLquery = "INSERT INTO relations (userID, friendID) VALUE (?, ?)"
     pool.execute(mySQLquery, [userID, friendsID], (error, result) => {
-        if(error || result.affectedRows === 0) {
+        if(error) {
             res.status(500).send(error)
+        } else if (result.affectedRows === 0) {
+            res.status(500).send('Something went wrong in the database')
         } else {
             res.status(200).send('Friend added')
         }

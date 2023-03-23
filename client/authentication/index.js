@@ -41,6 +41,6 @@ loginBtn.addEventListener('click', async (event) => {
     if (respons.status !== 200) {
         h2Res.textContent = data
     } else {
-        window.location.href="/client/todos/todo.html"
+        window.location.href="http://127.0.0.1:5500/Backend1-todo-exam/client/todos/todo.html"
     }
 })

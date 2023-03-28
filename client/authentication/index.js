@@ -38,9 +38,11 @@ loginBtn.addEventListener('click', async (event) => {
         }
     })
     const data = await respons.text()
+
     if (respons.status !== 200) {
         h2Res.textContent = data
     } else {
-        window.location.href="http://127.0.0.1:5500/Backend1-todo-exam/client/todos/todo.html"
+        localStorage.setItem('username', data)
+        window.location.href="../todos/todo.html"
     }
 })

@@ -21,7 +21,7 @@ exports.postToDo = function postToDo(req, res) {
         if (error) {
             res.status(500).send(error.sqlMessage)
         } else if (result.affectedRows < 1){
-            res.status(500).send('Somethong went wrong in the database')
+            res.status(500).send('Something went wrong in the database')
         } else {
             res.status(200).send("Todo added")
         }

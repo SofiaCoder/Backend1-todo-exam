@@ -1,6 +1,6 @@
 const selectFriend = document.querySelector('#selectFriend')
 
-export default async function findFriends() {
+export async function findFriends() {
 
     const res = await fetch('http://localhost:5050/friends',
     {credentials: "include"});

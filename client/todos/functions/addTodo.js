@@ -1,7 +1,7 @@
 const taskInput = document.querySelector('#task');
 const taskTextInput = document.querySelector('#todoText');
 
-export default async function addTodo() {
+export async function addTodo() {
 
     const task = taskInput.value;
     const text = taskTextInput.value;

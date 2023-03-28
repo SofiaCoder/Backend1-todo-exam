@@ -1,8 +1,7 @@
 import getFriendsTodos from "./getFriendsTodos.js";
-
 const friendList = document.querySelector('#friendList');
 
-export default async function showFriends() {
+export async function showFriends() {
     const res = await fetch('http://localhost:5050/friends/show', {
         credentials: 'include'
     });

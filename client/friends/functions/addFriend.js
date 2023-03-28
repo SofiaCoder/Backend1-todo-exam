@@ -1,7 +1,7 @@
 const selectFriend = document.querySelector('#selectFriend');
 const h2Res = document.querySelector('#h2Res');
 
-export default async function addFriend() {
+export async function addFriend() {
     
     const friendsID = selectFriend.value
 

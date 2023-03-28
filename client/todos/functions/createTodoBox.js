@@ -3,7 +3,7 @@ import checkboxValue from "./checkboxValuePatch.js";
 import showTodoToEdit from "./showTodoToEdit.js";
 const checkboxSection = document.querySelector('.checkboxSection');
 
-const createTodoBox = (data) => {
+export const createTodoBox = (data) => {
     data.forEach((todo) => {
         const id = todo.id 
         let boxVal = todo.value;
@@ -67,4 +67,4 @@ const createTodoBox = (data) => {
     })
 }
 
-export {createTodoBox as default};
+

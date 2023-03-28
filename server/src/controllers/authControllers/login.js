@@ -40,7 +40,7 @@ exports.login = function login (req, res) {
                     sameSite: "none",
                     secure: true
                 })
-                res.status(200).send(result)
+                res.status(200).send(username)
             } else {
                 res.status(401).send('Wrong password')
             }
